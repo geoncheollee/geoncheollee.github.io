@@ -2,31 +2,34 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>Mind Map</title>
+  <title>Mind Map with import</title>
   <style>
-    html, body, #map-container {
+    html, body {
       margin: 0;
       height: 100%;
+    }
+    #map-container {
       width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
   <div id="map-container"></div>
 
-  <!-- Mind-elixir Core 라이브러리 -->
-  <script src="https://cdn.jsdelivr.net/npm/mind-elixir-core/dist/mind-elixir.min.js"></script>
+  <!-- import 방식은 type="module" 필수 -->
+  <script type="module">
+    import MindElixir from 'https://cdn.jsdelivr.net/npm/mind-elixir-core@0.22.0/dist/mind-elixir.min.js';
 
-  <script>
     const mind = new MindElixir({
       el: '#map-container',
-      direction: MindElixir.LEFT,
+      direction: MindElixir.SIDE,
       draggable: true,
       contextMenu: true,
       toolBar: true,
       nodeMenu: true,
       keypress: true,
-    })
+    });
 
     const data = {
       nodeData: {
@@ -35,42 +38,36 @@
         children: [
           {
             topic: '나무2',
-            id: 'sub1',
+            id: 'node2',
             children: [
               {
                 topic: '나무3',
-                id: 'sub1-1',
+                id: 'node3',
                 children: [
-                  { topic: '잎사귀', id: 'sub1-1-1' },
-                  { topic: '가지', id: 'sub1-1-2' }
+                  { topic: '잎사귀', id: 'leaf' },
+                  { topic: '가지', id: 'branch' }
                 ]
               },
               {
                 topic: '열매',
-                id: 'sub1-2'
+                id: 'fruit'
               }
             ]
           },
           {
             topic: '뿌리',
-            id: 'sub2',
+            id: 'root2',
             children: [
-              {
-                topic: '수분 흡수',
-                id: 'sub2-1'
-              },
-              {
-                topic: '영양 전달',
-                id: 'sub2-2'
-              }
+              { topic: '수분 흡수', id: 'water' },
+              { topic: '영양 전달', id: 'nutrient' }
             ]
           }
         ]
       },
       linkData: {},
-    }
+    };
 
-    mind.init(data)
+    mind.init(data);
   </script>
 </body>
 </html>
