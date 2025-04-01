@@ -1,1 +1,76 @@
-test
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mind Map</title>
+  <style>
+    html, body, #map-container {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+
+  <!-- Mind-elixir Core 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-elixir-core/dist/mind-elixir.min.js"></script>
+
+  <script>
+    const mind = new MindElixir({
+      el: '#map-container',
+      direction: MindElixir.LEFT,
+      draggable: true,
+      contextMenu: true,
+      toolBar: true,
+      nodeMenu: true,
+      keypress: true,
+    })
+
+    const data = {
+      nodeData: {
+        id: 'root',
+        topic: '나무',
+        children: [
+          {
+            topic: '나무2',
+            id: 'sub1',
+            children: [
+              {
+                topic: '나무3',
+                id: 'sub1-1',
+                children: [
+                  { topic: '잎사귀', id: 'sub1-1-1' },
+                  { topic: '가지', id: 'sub1-1-2' }
+                ]
+              },
+              {
+                topic: '열매',
+                id: 'sub1-2'
+              }
+            ]
+          },
+          {
+            topic: '뿌리',
+            id: 'sub2',
+            children: [
+              {
+                topic: '수분 흡수',
+                id: 'sub2-1'
+              },
+              {
+                topic: '영양 전달',
+                id: 'sub2-2'
+              }
+            ]
+          }
+        ]
+      },
+      linkData: {},
+    }
+
+    mind.init(data)
+  </script>
+</body>
+</html>
