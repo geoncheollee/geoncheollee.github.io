@@ -17,14 +17,8 @@
 <body>
   <div id="map-container"></div>
 
-  <!--
-  This site uses mind-elixir-core (MIT License)
-  Copyright (c) 2020 ssshooter
-  https://github.com/ssshooter/mind-elixir-core
-  -->
-  <!-- import 방식은 type="module" 필수 -->
   <script type="module">
-    import MindElixir from '/MindElixir.js';
+    import MindElixir from './thirdpartylib/MindElixir.js';
 
     const mind = new MindElixir({
       el: '#map-container',
@@ -39,32 +33,107 @@
     const data = {
       nodeData: {
         id: 'root',
-        topic: '자라는중...',
+        topic: '나 (Full Stack 개발자)',
         children: [
           {
-            topic: '나무1',
-            id: 'node2',
+            topic: '기술 스택 (Tech Stack)',
+            id: 'tech',
             children: [
               {
-                topic: '나무2',
-                id: 'node3',
+                topic: 'Frontend',
+                id: 'frontend',
                 children: [
-                  { topic: '잎사귀', id: 'leaf' },
-                  { topic: '가지', id: 'branch' }
+                  { topic: 'React', id: 'react' },
+                  { topic: 'Vue.js', id: 'vue' },
+                  { topic: 'TypeScript', id: 'ts' },
+                  { topic: 'HTML/CSS', id: 'htmlcss' }
                 ]
               },
               {
-                topic: '열매',
-                id: 'fruit'
+                topic: 'Backend',
+                id: 'backend',
+                children: [
+                  { topic: 'Spring Boot', id: 'spring' },
+                  { topic: 'Node.js', id: 'node' },
+                  { topic: 'Express', id: 'express' },
+                  { topic: 'Java', id: 'java' }
+                ]
+              },
+              {
+                topic: 'Database',
+                id: 'db',
+                children: [
+                  { topic: 'MySQL', id: 'mysql' },
+                  { topic: 'PostgreSQL', id: 'pg' },
+                  { topic: 'MongoDB', id: 'mongo' },
+                  { topic: 'Redis', id: 'redis' }
+                ]
+              },
+              {
+                topic: 'DevOps / Infra',
+                id: 'infra',
+                children: [
+                  { topic: 'AWS', id: 'aws' },
+                  { topic: 'Docker', id: 'docker' },
+                  { topic: 'Nginx', id: 'nginx' },
+                  { topic: 'GitHub Actions', id: 'gha' }
+                ]
               }
             ]
           },
           {
-            topic: '뿌리',
-            id: 'root2',
+            topic: '프로젝트 경험',
+            id: 'projects',
             children: [
-              { topic: '수분 흡수', id: 'water' },
-              { topic: '영양 전달', id: 'nutrient' }
+              { topic: '상용 서비스 개발', id: 'commercial' },
+              { topic: '개인 프로젝트', id: 'personal' },
+              { topic: '팀 협업 프로젝트', id: 'team' }
+            ]
+          },
+          {
+            topic: '역할 및 기여',
+            id: 'roles',
+            children: [
+              { topic: 'PL / 개발 리더', id: 'pl' },
+              { topic: '설계 및 리뷰', id: 'design' },
+              { topic: '성능 개선', id: 'performance' },
+              { topic: '보안 강화', id: 'security' }
+            ]
+          },
+          {
+            topic: '문제 해결 / 성과',
+            id: 'solution',
+            children: [
+              { topic: '트래픽 병목 해결', id: 'bottleneck' },
+              { topic: '장애 대응', id: 'issuefix' },
+              { topic: '테스트 자동화', id: 'testauto' }
+            ]
+          },
+          {
+            topic: '성장 경험',
+            id: 'growth',
+            children: [
+              { topic: '사이드 공부 (아키텍처 등)', id: 'study' },
+              { topic: '자격증 (정보처리기사 등)', id: 'cert' },
+              { topic: '스터디/컨퍼런스 참여', id: 'studygroup' }
+            ]
+          },
+          {
+            topic: '협업 경험',
+            id: 'collab',
+            children: [
+              { topic: '기획/디자인 협업', id: 'design' },
+              { topic: 'Agile / Scrum', id: 'scrum' },
+              { topic: 'Notion, Slack 등 도구', id: 'tools' }
+            ]
+          },
+          {
+            topic: '향후 목표',
+            id: 'goal',
+            children: [
+              { topic: '아키텍처 설계 능력 강화', id: 'arch' },
+              { topic: '대용량 트래픽 처리 기술', id: 'scale' },
+              { topic: '개발자 리더십', id: 'leadership' }
             ]
           }
         ]
