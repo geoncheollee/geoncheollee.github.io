@@ -45,8 +45,7 @@
                 children: [
                   { topic: 'React', id: 'react' },
                   { topic: 'Vue.js', id: 'vue' },
-                  { topic: 'TypeScript', id: 'ts' },
-                  { topic: 'HTML/CSS', id: 'htmlcss' }
+                  { topic: 'HTML/CSS/jQuery', id: 'htmlcss' }
                 ]
               },
               {
@@ -55,7 +54,6 @@
                 children: [
                   { topic: 'Spring Boot', id: 'spring' },
                   { topic: 'Node.js', id: 'node' },
-                  { topic: 'Express', id: 'express' },
                   { topic: 'Java', id: 'java' }
                 ]
               },
@@ -64,8 +62,9 @@
                 id: 'db',
                 children: [
                   { topic: 'MySQL', id: 'mysql' },
-                  { topic: 'PostgreSQL', id: 'pg' },
-                  { topic: 'MongoDB', id: 'mongo' },
+                  { topic: 'MS-SQL', id: 'mssql' },
+                  { topic: 'Oracle', id: 'oracle' },
+                  { topic: 'Tibero', id: 'tibero' },
                   { topic: 'Redis', id: 'redis' }
                 ]
               },
@@ -74,9 +73,13 @@
                 id: 'infra',
                 children: [
                   { topic: 'AWS', id: 'aws' },
+                  { topic: 'Jenkins', id: 'jenkins' },
                   { topic: 'Docker', id: 'docker' },
                   { topic: 'Nginx', id: 'nginx' },
-                  { topic: 'GitHub Actions', id: 'gha' }
+                  { topic: 'Apache', id: 'apache' },
+                  { topic: 'Tomcat', id: 'tomcat' },
+                  { topic: 'Git', id: 'git' },
+                  { topic: 'SVN', id: 'svn' }
                 ]
               }
             ]
@@ -85,9 +88,9 @@
             topic: '프로젝트 경험',
             id: 'projects',
             children: [
-              { topic: '상용 서비스 개발', id: 'commercial' },
-              { topic: '개인 프로젝트', id: 'personal' },
-              { topic: '팀 협업 프로젝트', id: 'team' }
+              { topic: '고객센터 채팅 솔루션 개발 및 구축', id: 'project1' },
+              { topic: '고객센터 지식관리 솔루션 개발 및 구축', id: 'project2' },
+              { topic: '고객센터 감성분석 솔루션 구축', id: 'project3' }
             ]
           },
           {
@@ -104,7 +107,8 @@
             topic: '문제 해결 / 성과',
             id: 'solution',
             children: [
-              { topic: '트래픽 병목 해결', id: 'bottleneck' },
+              { topic: '트래픽 병목 해결', id: 'bottleneck' }, //인덱스 추가
+              { topic: '성능 개선', id: 'solution1' }, //디바운스
               { topic: '장애 대응', id: 'issuefix' },
               { topic: '테스트 자동화', id: 'testauto' }
             ]
@@ -123,7 +127,6 @@
             id: 'collab',
             children: [
               { topic: '기획/디자인 협업', id: 'design' },
-              { topic: 'Agile / Scrum', id: 'scrum' },
               { topic: 'Notion, Slack 등 도구', id: 'tools' }
             ]
           },
@@ -132,8 +135,7 @@
             id: 'goal',
             children: [
               { topic: '아키텍처 설계 능력 강화', id: 'arch' },
-              { topic: '대용량 트래픽 처리 기술', id: 'scale' },
-              { topic: '개발자 리더십', id: 'leadership' }
+              { topic: '대용량 트래픽 처리 기술', id: 'scale' }
             ]
           }
         ]
