@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mind Map with import</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #map-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+
+  <script type="module">
+    import MindElixir from './thirdpartylib/MindElixir.js';
+
+    const mind = new MindElixir({
+      el: '#map-container',
+      direction: MindElixir.SIDE,
+      draggable: true,
+      contextMenu: true,
+      toolBar: true,
+      nodeMenu: true,
+      keypress: true,
+    });
+
+    const data = {
+      nodeData: {
+        id: 'root',
+        topic: '경험한 기술',
+        children: [
+            {
+                topic: 'Frontend',
+                id: 'frontend',
+                children: [
+                    { topic: 'React', id: 'react' },
+                    { topic: 'Vue.js', id: 'vue' },
+                    { topic: 'HTML/CSS/jQuery', id: 'htmlcss' }
+                ]
+            },
+            {
+                topic: 'Backend',
+                id: 'backend',
+                children: [
+                    { topic: 'Spring Boot', id: 'spring' },
+                    { topic: 'Node.js', id: 'node' },
+                    { topic: 'Java', id: 'java' }
+                ]
+            },
+            {
+                topic: 'Database',
+                id: 'db',
+                children: [
+                    { topic: 'MySQL', id: 'mysql' },
+                    { topic: 'MS-SQL', id: 'mssql' },
+                    { topic: 'Oracle', id: 'oracle' },
+                    { topic: 'Tibero', id: 'tibero' },
+                    { topic: 'Redis', id: 'redis' }
+                ]
+            },
+            {
+            topic: 'DevOps / Infra',
+            id: 'infra',
+            children: [
+                    { topic: 'AWS', id: 'aws' },
+                    { topic: 'Jenkins', id: 'jenkins' },
+                    { topic: 'Docker', id: 'docker' },
+                    { topic: 'Nginx', id: 'nginx' },
+                    { topic: 'Apache', id: 'apache' },
+                    { topic: 'Tomcat', id: 'tomcat' },
+                    { topic: 'Git', id: 'git' },
+                    { topic: 'SVN', id: 'svn' }
+                ]
+            }
+        ]
+      },
+      linkData: {},
+    };
+
+    mind.init(data);
+  </script>
+</body>
+</html>
