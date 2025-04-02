@@ -80,53 +80,8 @@
                 ]
               },
               {
-                topic: '경험한 기술',
-                id: 'myTech',
-                children: [
-                  {
-                    topic: 'Frontend',
-                    id: 'frontend',
-                    children: [
-                      { topic: 'React', id: 'react' },
-                      { topic: 'Vue.js', id: 'vue' },
-                      { topic: 'HTML/CSS/jQuery', id: 'htmlcss' }
-                    ]
-                  },
-                  {
-                    topic: 'Backend',
-                    id: 'backend',
-                    children: [
-                      { topic: 'Spring Boot', id: 'spring' },
-                      { topic: 'Node.js', id: 'node' },
-                      { topic: 'Java', id: 'java' }
-                    ]
-                  },
-                  {
-                    topic: 'Database',
-                    id: 'db',
-                    children: [
-                      { topic: 'MySQL', id: 'mysql' },
-                      { topic: 'MS-SQL', id: 'mssql' },
-                      { topic: 'Oracle', id: 'oracle' },
-                      { topic: 'Tibero', id: 'tibero' },
-                      { topic: 'Redis', id: 'redis' }
-                    ]
-                  },
-                  {
-                    topic: 'DevOps / Infra',
-                    id: 'infra',
-                    children: [
-                      { topic: 'AWS', id: 'aws' },
-                      { topic: 'Jenkins', id: 'jenkins' },
-                      { topic: 'Docker', id: 'docker' },
-                      { topic: 'Nginx', id: 'nginx' },
-                      { topic: 'Apache', id: 'apache' },
-                      { topic: 'Tomcat', id: 'tomcat' },
-                      { topic: 'Git', id: 'git' },
-                      { topic: 'SVN', id: 'svn' }
-                    ]
-                  }
-                ]
+                topic: '경험한 기술 👉',
+                id: 'myTech'
               }
             ]
           },
@@ -202,9 +157,16 @@
     mind.bus.addListener('selectNode', (node) => {
       const nodeId = node.id;
 
+      if(nodeId == "myTech") {
+        window.open("https://geoncheollee.github.io/page/my-tech.html", '_blank');
+        return;
+      }
+
       if(nodeId == "blog") {
         window.open("https://place-g.tistory.com/", '_blank');
+        return;
       }
+
     });
   </script>
 </body>
