@@ -144,6 +144,21 @@
     };
 
     mind.init(data);
+
+    /**
+     * selectNode	노드를 클릭했을 때
+       expandNode	노드를 펼쳤을 때
+       collapseNode	노드를 접었을 때
+       finishEdit	노드 텍스트 수정을 마쳤을 때
+       operation	노드 추가/삭제/이동 등 조작 시
+     **/
+    mind.addEventListener(event => {
+      if (event.name === 'selectNode') {
+        const node = event.data;
+        console.log('클릭한 노드:', node);
+        alert(`"${node.topic}" 노드를 클릭했어요!`);
+      }
+    });
   </script>
 </body>
 </html>
