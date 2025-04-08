@@ -77,30 +77,162 @@
             ]
           },
           {
-          topic: 'DevOps / Infra',
-          id: 'infra',
-          children: [
-                  { topic: 'AWS', id: 'aws' },
-                  { topic: 'Jenkins', id: 'jenkins' },
-                  { topic: 'Docker', id: 'docker' },
-                  { topic: 'WEB/WAS',
-                    id: 'webWas',
+            topic: 'Test',
+            id: 'test',
+            children: [
+              { topic: 'JUnit', id: 'jUnit' },
+            ]
+          },
+          {
+            topic: 'DevOps / Infra',
+            id: 'infra',
+            children: [
+              { topic: 'AWS', id: 'aws' },
+              { topic: 'Jenkins', id: 'jenkins' },
+              { topic: 'Docker', id: 'docker' },
+              { topic: 'WEB/WAS',
+                id: 'webWas',
+                children: [
+                  { topic: 'Nginx', id: 'nginx' },
+                  { topic: 'Apache', id: 'apache' },
+                  { topic: 'Tomcat', id: 'tomcat' },
+                  { topic: 'WebToB', id: 'webToB' },
+                  { topic: 'Jeus', id: 'jeus' }
+                ]
+              },
+              { topic: 'MSA',
+                id: 'msa',
+                children: [
+                  {
+                    topic: '서비스 분리 (Service Decomposition)',
+                    id: 'serviceDecomposition',
                     children: [
-                      { topic: 'Nginx', id: 'nginx' },
-                      { topic: 'Apache', id: 'apache' },
-                      { topic: 'Tomcat', id: 'tomcat' },
-                      { topic: 'WebToB', id: 'webToB' },
-                      { topic: 'Jeus', id: 'jeus' }
+                      { topic: 'user-service', id: 'userService' },
+                      { topic: 'order-service', id: 'orderService' },
+                      { topic: 'product-service', id: 'productService' },
+                      { topic: 'etc-service', id: 'etcService' },
                     ]
                   },
-                  { topic: 'Version Control',
-                    id: 'versionControl',
+                  {
+                    topic: 'API Gateway',
+                    id: 'apiGateway',
                     children: [
-                      { topic: 'Git', id: 'git' },
-                      { topic: 'SVN', id: 'svn' }
+                      { topic: 'Spring Cloud Gateway', id: 'apiGateway1' },
+                      { topic: 'Kong', id: 'apiGateway2' },
+                      { topic: 'Nginx', id: 'apiGateway3' },
+                      { topic: 'AWS API Gateway', id: 'apiGateway4' },
                     ]
-                  }
-              ]
+                  },
+                  {
+                    topic: '서비스 간 통신 (Service-to-Service Communication)',
+                    id: 'serviceToServiceCommunication',
+                    children: [
+                      { topic: 'Feign', id: 'serviceToServiceCommunication1' },
+                      { topic: 'RestTemplate', id: 'serviceToServiceCommunication2' },
+                      { topic: 'WebClient', id: 'serviceToServiceCommunication3' },
+                      { topic: 'gRPC', id: 'serviceToServiceCommunication4' },
+                      { topic: 'Kafka', id: 'serviceToServiceCommunication5' },
+                      { topic: 'RabbitMQ', id: 'serviceToServiceCommunication6' },
+                    ]
+                  },
+                  {
+                    topic: '서비스 디스커버리 (Service Discovery)',
+                    id: 'serviceDiscovery',
+                    children: [
+                      { topic: 'Eureka', id: 'serviceDiscovery1' },
+                      { topic: 'Consul', id: 'serviceDiscovery2' },
+                      { topic: 'Zookeeper', id: 'serviceDiscovery3' },
+                    ]
+                  },
+                  {
+                    topic: '분산 트랜잭션 / Saga 패턴',
+                    id: 'distributedTransaction',
+                    children: [
+                      { topic: 'Saga', id: 'distributedTransaction1' },
+                      { topic: 'Outbox Pattern', id: 'distributedTransaction2' },
+                      { topic: 'Choreography', id: 'distributedTransaction3' },
+                      { topic: 'Orchestration', id: 'distributedTransaction4' },
+                    ]
+                  },
+                  {
+                    topic: '인증 및 인가',
+                    id: 'authenticationAndAuthorization',
+                    children: [
+                      { topic: 'OAuth2', id: 'authenticationAndAuthorization1' },
+                      { topic: 'JWT', id: 'authenticationAndAuthorization2' },
+                      { topic: 'Keycloak', id: 'authenticationAndAuthorization3' },
+                      { topic: 'Spring Security', id: 'authenticationAndAuthorization4' },
+                      { topic: 'Auth0', id: 'authenticationAndAuthorization5' },
+                    ]
+                  },
+                  {
+                    topic: '모니터링 & 로깅',
+                    id: 'monitoringAndLoogging',
+                    children: [
+                      { topic: 'Prometheus', id: 'monitoringAndLoogging1' },
+                      { topic: 'Grafana', id: 'monitoringAndLoogging2' },
+                      { topic: 'ELK Stack', id: 'monitoringAndLoogging3' },
+                      { topic: 'Zipkin', id: 'monitoringAndLoogging4' },
+                      { topic: 'Jaeger', id: 'monitoringAndLoogging5' },
+                    ]
+                  },
+                  {
+                    topic: 'CI/CD',
+                    id: 'ciCd',
+                    children: [
+                      { topic: 'Jenkins', id: 'ciCd1' },
+                      { topic: 'GitHub Actions', id: 'ciCd2' },
+                      { topic: 'ArgoCD', id: 'ciCd3' },
+                    ]
+                  },
+                  {
+                    topic: '컨테이너',
+                    id: 'container',
+                    children: [
+                      { topic: 'Docker', id: 'container1' },
+                    ]
+                  },
+                  {
+                    topic: '오케스트레이션',
+                    id: 'orchestration',
+                    children: [
+                      { topic: 'Kubernetes', id: 'orchestration1' },
+                      { topic: 'Helm', id: 'orchestration2' },
+                    ]
+                  },
+                ]
+              },
+              { topic: 'Version Control',
+                id: 'versionControl',
+                children: [
+                  { topic: 'Git', id: 'git' },
+                  { topic: 'SVN', id: 'svn' }
+                ]
+              }
+            ]
+          },
+          {
+            topic: '개발 방법론',
+            id: 'softwareDevelopmentMethodology',
+            children: [
+              { topic: 'DDD', id: 'ddd' },
+              { topic: 'EDA', id: 'eda' },
+              { topic: 'TDD', id: 'tdd' },
+            ]
+          },
+          {
+            topic: 'Cache',
+            id: 'cache',
+            children: [
+              { topic: '로컬 캐시', id: 'localCache' },
+              { topic: '분산 캐시',
+                id: 'distributedCache',
+                children: [
+                  { topic: '레디스(Redis)', id: 'redis' },
+                  { topic: '멤캐시드(Memcached)', id: 'memcached' },
+                ]
+              },
+            ]
           },
           {
           topic: '빌드 도구',
