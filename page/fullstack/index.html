@@ -35,61 +35,98 @@
         id: 'root',
         topic: 'Full Stack',
         children: [
-            {
-                topic: 'Frontend',
-                id: 'frontend',
-                children: [
-                    { topic: 'React', id: 'react' },
-                    { topic: 'Vue.js', id: 'vue' },
-                    { topic: 'HTML/CSS/jQuery', id: 'htmlcss' }
-                ]
-            },
-            {
-                topic: 'Backend',
-                id: 'backend',
-                children: [
-                    { topic: 'Spring Boot', id: 'spring' },
-                    { topic: 'Node.js', id: 'node' },
-                    { topic: 'Java', id: 'java' }
-                ]
-            },
-            {
-                topic: 'Database',
-                id: 'db',
-                children: [
-                    { topic: 'MySQL', id: 'mysql' },
-                    { topic: 'MS-SQL', id: 'mssql' },
-                    { topic: 'Oracle', id: 'oracle' },
-                    { topic: 'Tibero', id: 'tibero' },
-                    { topic: 'Redis', id: 'redis' }
-                ]
-            },
-            {
-            topic: 'DevOps / Infra',
-            id: 'infra',
+          {
+            topic: 'Frontend',
+            id: 'frontend',
             children: [
-                    { topic: 'AWS', id: 'aws' },
-                    { topic: 'Jenkins', id: 'jenkins' },
-                    { topic: 'Docker', id: 'docker' },
-                    { topic: 'WEB/WAS',
-                      id: 'webWas',
-                      children: [
-                        { topic: 'Nginx', id: 'nginx' },
-                        { topic: 'Apache', id: 'apache' },
-                        { topic: 'Tomcat', id: 'tomcat' },
-                        { topic: 'WebToB', id: 'webToB' },
-                        { topic: 'Jeus', id: 'jeus' },
-                      ]
-                    },
-                    { topic: 'Version Control',
-                      id: 'versionControl',
-                      children: [
-                          { topic: 'Git', id: 'git' },
-                          { topic: 'SVN', id: 'svn' }
-                      ]
-                    }
+              { topic: 'React', id: 'react' },
+              { topic: 'Vue.js', id: 'vue' },
+              { topic: 'HTML/CSS/jQuery', id: 'htmlcss' }
+            ]
+          },
+          {
+            topic: 'Backend',
+            id: 'backend',
+            children: [
+              { topic: 'Spring Boot', id: 'spring' },
+              { topic: 'Node.js', id: 'node' },
+              { topic: 'Java', id: 'java' }
+            ]
+          },
+          {
+            topic: 'Database',
+            id: 'db',
+            children: [
+              { topic: 'MySQL', id: 'mysql' },
+              { topic: 'MS-SQL', id: 'mssql' },
+              { topic: 'Oracle', id: 'oracle' },
+              { topic: 'Tibero', id: 'tibero' },
+              { topic: 'Redis', id: 'redis' },
+              { topic: 'ORM',
+                id: 'orm',
+                children: [
+                  { topic: 'Hibernate()', id: 'Hibernate' },
+                  { topic: 'MS-SQL', id: 'mssql' },
+                  { topic: 'Oracle', id: 'oracle' },
+                  { topic: 'Tibero', id: 'tibero' },
+                  { topic: 'Redis', id: 'redis' },
+                  { topic: 'ORM', id: 'orm' },
+                  { topic: 'MyBatis', id: 'myBatis' },
                 ]
-            }
+              }
+            ]
+          },
+          {
+          topic: 'DevOps / Infra',
+          id: 'infra',
+          children: [
+                  { topic: 'AWS', id: 'aws' },
+                  { topic: 'Jenkins', id: 'jenkins' },
+                  { topic: 'Docker', id: 'docker' },
+                  { topic: 'WEB/WAS',
+                    id: 'webWas',
+                    children: [
+                      { topic: 'Nginx', id: 'nginx' },
+                      { topic: 'Apache', id: 'apache' },
+                      { topic: 'Tomcat', id: 'tomcat' },
+                      { topic: 'WebToB', id: 'webToB' },
+                      { topic: 'Jeus', id: 'jeus' }
+                    ]
+                  },
+                  { topic: 'Version Control',
+                    id: 'versionControl',
+                    children: [
+                      { topic: 'Git', id: 'git' },
+                      { topic: 'SVN', id: 'svn' }
+                    ]
+                  }
+              ]
+          },
+          {
+          topic: '빌드 도구',
+          id: 'buildTool',
+          children: [
+              { topic: 'Gradle', id: 'gradle' },
+              { topic: 'Maven', id: 'maven' },
+              { topic: 'Ant', id: 'ant' },
+            ]
+          },
+          {
+          topic: '준비중',
+          id: 'etc',
+          children: [
+              { topic: '기초', id: 'basic' },
+              { topic: '언어', id: 'devLanguage' },
+              { topic: '자료구조', id: 'dataStructure' },
+              { topic: '객체지향', id: 'objectOriented' },
+              { topic: '자바 머신 동작 원리', id: 'javaVMExecutionFlow' },
+              { topic: '가비지 컬렉션', id: 'garbageCollection' },
+              { topic: '스레드', id: 'thread' },
+              { topic: '스트림', id: 'stream' },
+              { topic: '플레이 프레임워크', id: 'playFramework' },
+              { topic: '스파크', id: 'spark' },
+            ]
+          }
         ]
       },
       linkData: {},
