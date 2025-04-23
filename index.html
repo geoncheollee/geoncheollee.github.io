@@ -80,8 +80,12 @@
                 ]
               },
               {
-                topic: '경험한 기술 👉',
+                topic: '💻 경험한 기술 👉',
                 id: 'myTech'
+              },
+              {
+                topic: '📚 공부하고 있는 기술 👉',
+                id: 'myStudy'
               }
             ]
           },
@@ -159,6 +163,11 @@
 
       if(nodeId == "myTech") {
         window.open("https://geoncheollee.github.io/page/my-tech", '_blank');
+        return;
+      }
+
+      if(nodeId == "myStudy") {
+        window.open("https://geoncheollee.github.io/page/my-study", '_blank');
         return;
       }
 

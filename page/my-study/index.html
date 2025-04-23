@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>공부하고 있는 기술</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    #map-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+
+  <script type="module">
+    import MindElixir from 'https://geoncheollee.github.io/thirdpartylib/MindElixir.js';
+
+    const mind = new MindElixir({
+      el: '#map-container',
+      direction: MindElixir.SIDE,
+      draggable: true,
+      contextMenu: true,
+      toolBar: true,
+      nodeMenu: true,
+      keypress: true,
+    });
+
+    const data = {
+      nodeData: {
+        id: 'root',
+        topic: ' 공부하고 있는 기술',
+        children: [
+          {
+            topic: '아키텍처',
+            id: 'architecture',
+            children: [
+              { topic: '기술블로그',
+                id: 'techBlog',
+                children: [
+                  {
+                    topic: '당근마켓 - 계층형 및 육각형 아키텍처 도입 사례 👉',
+                    id: 'carrotCase1'
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      linkData: {},
+    };
+
+    mind.init(data);
+
+    /**
+     * selectNode	노드를 클릭했을 때
+       expandNode	노드를 펼쳤을 때
+       collapseNode	노드를 접었을 때
+       finishEdit	노드 텍스트 수정을 마쳤을 때
+       operation	노드 추가/삭제/이동 등 조작 시
+    **/
+    mind.bus.addListener('selectNode', (node) => {
+      const nodeId = node.id;
+
+      if(nodeId == "carrotCase1") {
+        window.open("https://medium.com/daangn/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B3%A0%EB%AF%BC%EC%9D%80-%EC%B2%98%EC%9D%8C%EC%9D%B4%EB%9D%BC-b75dffd73eb0", '_blank');
+        return;
+      }
+
+    });
+  </script>
+</body>
+</html>
