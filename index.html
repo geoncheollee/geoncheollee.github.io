@@ -130,7 +130,7 @@
                 topic: '코딩테스트',
                 id: 'codingtest',
                 children: [
-                  { topic: '프로그래머스', id: 'programmers' },
+                  { topic: '프로그래머스 👉', id: 'programmers' },
                   { topic: '코딜리티', id: 'codility' },
                   { topic: '백준', id: 'acmicpc' },
                   { topic: '테스트돔', id: 'testDome' },
@@ -183,6 +183,11 @@
 
       if(nodeId == "blog") {
         window.open("https://place-g.tistory.com/", '_blank');
+        return;
+      }
+
+      if(nodeId == "programmers") {
+        window.open("https://geoncheollee.github.io/page/growth/codingtest/programmers/index.html", '_blank');
         return;
       }
 
