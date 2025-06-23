@@ -122,7 +122,13 @@
             topic: '성장 경험',
             id: 'growth',
             children: [
-              { topic: '사이드 공부 (아키텍처 등)', id: 'study' },
+              { topic: '사이드 공부',
+                id: 'study',
+                children: [
+                  { topic: '아키텍처', id: 'study_architecture' },
+                  { topic: 'TDD', id: 'study_TDD' },
+                ]
+              },
               { topic: '블로그 운영(티스토리) 👉', id: 'blog' },
               { topic: '자격증 (정보처리기사 등)', id: 'cert' },
               { topic: '스터디/컨퍼런스 참여', id: 'studygroup' },
