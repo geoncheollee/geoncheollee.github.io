@@ -1,19 +1,5 @@
-https://geoncheollee.github.io
+## 깃 블로그
+링크용으로 사용하기 위한 블로그
 
+[마인드맵](https://geoncheollee.github.io)
 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-TODO
-=============
-
-### 코딩테스트 링크 연결
-https://geoncheollee.github.io/page/growth/codingtest/programmers/index.html
