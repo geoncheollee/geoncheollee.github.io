@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>스터디 데이터 조회</title>
+  <!-- 엑셀 파싱용 SheetJS 라이브러리 -->
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <style>
+    table { border-collapse: collapse; width: 100%; margin-top: 15px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+
+  <h2>📚 스터디 목록 데이터</h2>
+  <div id="loading">엑셀 데이터를 가져오는 중...</div>
+  <table id="excel-table" style="display:none;">
+    <thead id="table-head"></thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script>
+    // 페이지 접속 시 자동으로 실행
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 한글 파일명은 encodeURIComponent 처리
+      //const excelUrl = "./page/study/" + encodeURIComponent("스터디.xlsx");
+      const excelUrl = "https://github.com/geoncheollee/geoncheollee.github.io/blob/ebac171e1849bdf2b8fc952cef8e3a1fcd54f29c/page/study/%EC%8A%A4%ED%84%B0%EB%94%94.xlsx";
+
+      try {
+        // 1. 엑셀 파일 가져오기
+        const response = await fetch(excelUrl);
+        if (!response.ok) throw new Error("엑셀 파일을 불러올 수 없습니다.");
+        
+        const arrayBuffer = await response.arrayBuffer();
+
+        // 2. SheetJS로 바이너리 읽기
+        const workbook = XLSX.read(arrayBuffer, { type: "array" });
+
+        // 3. 첫 번째 시트 데이터 JSON 변환
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+        console.log("수집된 엑셀 데이터:", jsonData);
+
+        // 4. 화면에 테이블 형태로 출력
+        renderTable(jsonData);
+
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("excel-table").style.display = "table";
+
+      } catch (error) {
+        console.error(error);
+        document.getElementById("loading").innerText = "데이터 로딩 실패: " + error.message;
+      }
+    });
+
+    // JSON 데이터를 HTML 테이블로 변환하는 함수
+    function renderTable(data) {
+      if (data.length === 0) return;
+
+      const thead = document.getElementById("table-head");
+      const tbody = document.getElementById("table-body");
+
+      // 컬럼 헤더 세팅
+      const headers = Object.keys(data[0]);
+      let headRow = "<tr>";
+      headers.forEach(h => headRow += `<th>${h}</th>`);
+      headRow += "</tr>";
+      thead.innerHTML = headRow;
+
+      // 데이터 행 세팅
+      let bodyRows = "";
+      data.forEach(row => {
+        bodyRows += "<tr>";
+        headers.forEach(h => {
+          bodyRows += `<td>${row[h] !== undefined ? row[h] : ""}</td>`;
+        });
+        bodyRows += "</tr>";
+      });
+      tbody.innerHTML = bodyRows;
+    }
+  </script>
+</body>
+</html>
